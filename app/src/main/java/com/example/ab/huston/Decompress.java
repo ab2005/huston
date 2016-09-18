@@ -14,45 +14,58 @@ import java.util.zip.ZipInputStream;
 /**
  */
 public final class Decompress {
-    public static void unzip(String zipFile, String location) throws IOException {
-        ZipInputStream zin = null;
-        BufferedOutputStream bout = null;
+    private static final String TAG = Decompress.class.getName();
+
+    public static void unziÁp(String zipFile, String location) throws IOException {
+        ZipInputStream zin = new ZipInputStream(new BufferedInputStream(new FileInputStream(zipFile)));
+        File root = createDirectory(new File(location));
         try {
-            zin = new ZipInputStream(
-                    new BufferedInputStream(new FileInputStream(zipFile)));
-            File root = mkdir(location);
             ZipEntry ze;
             while ((ze = zin.getNextEntry()) != null) {
-                Log.v("Decompress", "Unzipping " + ze.getName());
+                Log.v(TAG, "Unzipping " + ze.getName() + "...");
+                File fout = new File(root, ze.getName());
                 if (ze.isDirectory()) {
-                    mkdir(ze.getName());
+                    createDirectory(fout);
                 } else {
-                    FileOutputStream fout = new FileOutputStream(new File(root, ze.getName()));
-                    bout = new BufferedOutputStream(fout);
-                    // FIXME:
-                    for (int c = zin.read(); c != -1; c = zin.read()) {
-                        bout.write(c);
+                    BufferedOutputStream bout = new BufferedOutputStream(new FileOutputStream(fout));
+                    byte[] buffer = new byte[8192];
+                    int len;
+                    try {
+                        while ((len = zin.read(buffer)) != -1) {
+                            bout.write(buffer, 0, len);
+                        }
+                    } finally {
+                        bout.close();
+                        zin.closeEntry();
                     }
-                    zin.closeEntry();
-                    bout.close();
+                    setExecutable(fout);
                 }
-
+                setReadable(fout);
             }
         } finally {
-            if (zin != null) {
-                zin.close();
-            }
-            if (bout != null) {
-                bout.close();
-            }
+            zin.close();
         }
     }
 
-    private static File mkdir(String dir) throws IOException {
-        File f = new File(dir);
-        if (!f.isDirectory() && !f.mkdirs()) {
-            throw new IOException("Failed to mkdirs for " + f.getAbsolutePath());
+    public static File createDirectory(File f) throws IOException {
+        if (!f.mkdirs()) {
+            throw new IOException("Failed to create directory " + f.getAbsolutePath());
         }
         return f;
     }
+
+    public static File setExecutable(File f) throws IOException {
+        if (!f.setExecutable(true, true)) {
+            throw new IOException("Failed to set executable " + f.getAbsolutePath());
+        }
+        return f;
+    }
+
+    public static File setReadable(File f) throws IOException {
+        if (!f.setReadable(true, true)) {
+            throw new IOException("Failed to set readable " + f.getAbsolutePath());
+        }
+        return f;
+    }
+
 }

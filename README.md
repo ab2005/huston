@@ -23,3 +23,5 @@ Links
 - [Markdown](https://guides.github.com/features/mastering-markdown/ "asdfasdf asdfad")
 - [Choosing the Right Background Scheduler in Android](https://www.bignerdranch.com/blog/choosing-the-right-background-scheduler-in-android/)
 - [Optimize Battery Life with Android's GCM Network Manager] (https://www.bignerdranch.com/blog/optimize-battery-life-with-androids-gcm-network-manager/)
+- [Doze Mode](https://www.bignerdranch.com/blog/diving-into-doze-mode-for-developers/)
+- [Debug builds instrumentation](http://littlerobots.nl/blog/stetho-for-android-debug-builds-only/)
