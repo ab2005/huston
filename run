@@ -1,0 +1,2 @@
+echo "Huston running ..."
+./websocketd --port=$1 --staticdir=web vmstat -n 1
