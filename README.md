@@ -2,7 +2,7 @@
 
 ![alt text](http://history.nasa.gov/SP-350/i13-1.jpg "Houston, We've Had a Problem!")
 ```
-./gradlew installDebug
+./deploy
 ```
 
 ### TODO:
@@ -17,7 +17,7 @@
   <dt>Module</dt>
   <dd>A service that can be scheduled and interacted with.</dd>
 </dl>
- 
+
 Links
 -----
 - [Markdown](https://guides.github.com/features/mastering-markdown/ "asdfasdf asdfad")
