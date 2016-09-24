@@ -4,20 +4,23 @@
 ./deploy
 ```
 
-
 [![huston](http://history.nasa.gov/SP-350/i13-1.jpg "Houston, We've Had a Problem!")](https://www.youtube.com/watch?v=eco_xvkEQlg)
+
 <audio controls>
-  <source src="https://upload.wikimedia.org/wikipedia/commons/1/12/Apollo13-wehaveaproblem_edit_1.ogg" type="video/ogg">
-Your browser does not support the audio element.
+<source src="https://upload.wikimedia.org/wikipedia/commons/1/12/Apollo13-wehaveaproblem_edit_1.ogg" type="video/ogg">
 </audio>
 
 <video width="720" height="405" controls  poster="http://history.nasa.gov/SP-350/i13-1.jpg">
-	<source src="https://upload.wikimedia.org/wikipedia/commons/1/12/Apollo13-wehaveaproblem_edit_1.ogg" type="video/ogg">
+<source src="https://upload.wikimedia.org/wikipedia/commons/1/12/Apollo13-wehaveaproblem_edit_1.ogg" type="video/ogg">
 </video>
+
+
 ### TODO:
 - [ ] Project template
 - [ ] Library template
 - [ ] Module template
+
+[![huston](https://raw.githubusercontent.com/ab2005/huston/master/13095944_610320389132312_658416556216624423_n.jpg)]
 
 #### Glossary
 <dl>
