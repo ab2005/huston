@@ -38,3 +38,7 @@ Links
 - [Doze Mode](https://www.bignerdranch.com/blog/diving-into-doze-mode-for-developers/)
 - [Debug builds instrumentation](http://littlerobots.nl/blog/stetho-for-android-debug-builds-only/)
 - [Are You Using AppRTC as Your WebRTC Baseline Reference?](https://bloggeek.me/apprtc-webrtc-baseline-reference/)
+
+News
+-----
+- [Chrome 44 uses VP9](https://developers.google.com/web/updates/2016/01/vp9-webrtc?hl=en)
